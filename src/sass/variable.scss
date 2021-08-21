@@ -1,0 +1,120 @@
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #263238;
+
+  --color-Grey-light-1: #faf9f9;
+  --color-Grey-light-2: #f4f2f2;
+  --color-Grey-light-3: #f0eeee;
+  --color-Grey-light-4: #ccc;
+
+  --color-Grey-dark-1: #333;
+  --color-Grey-dark-2: #777;
+  --color-Grey-dark-3: #999;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgb(0, 0, 0, 0.06);
+
+  --line: 1px solid var(--color-Grey-light-2);
+}
+
+$colors: (
+  main: "#37474f",
+  primary: "#263238",
+  //Primary-dark is used for h2 & also used as an active class for the active link
+  primarylight: "#546e7a",
+  lighter: "#b0bec5",
+  text: "#fafafa",
+  link: "#444444",
+  bar-link: "#546e7a",
+  sidebar-border-color: rgba(176, 190, 197, 0.5),
+);
+//   $size
+//     (
+//       smallest: "25em",
+//       //275px
+//       smaller: "31.25em",
+//       //500px
+//       small: "37.5em",
+//       //600px
+//       medium: "56.25em",
+//       //900px
+//       large: "80em",
+//       //1300px
+//       larger: "90em",
+//       //1300px
+//       largest: "97em",
+//       //1500px
+//     );
+// $border: (1px solid #37474f);
+
+// MOvies preview card
+
+// <template>
+//   <div>
+//     <h2 class="mt-2 grey--text">{{ type }}</h2>
+//     <v-container fluid>
+//       <v-row>
+//         <v-col sm="3" v-for="movie in movies" :key="movie.id">
+//           <moviecard :movie="movie" />
+//           <!-- <p v-for="genre in genres" :key=""></p> -->
+//         </v-col>
+//       </v-row>
+//     </v-container>
+//   </div>
+// </template>
+
+// <script>
+// import Moviecard from "../components/Moviecard.vue";
+// export default {
+//   components: { Moviecard },
+
+//   data() {
+//     return {
+//       movies: [],
+//       type: null,
+//       id: null,
+//     };
+//   },
+
+//   mounted() {
+//     console.log("created", this.type);
+//     console.log(this.$route.params);
+//   },
+
+//   watch: {
+//     // watching params
+//     "$route.params.type": {
+//       handler: function (type) {
+//         this.type = type;
+//       },
+//       deep: true,
+//       immediate: true,
+//     },
+//     // watching query params
+//     "$route.query": {
+//       handler: function (query) {
+//         const { id, ctg } = query;
+//         let url = `movie/${id}`;
+//         if (ctg?.toLowerCase() === "genres") {
+//           url = `discover/movie?with_genres=${id}`;
+//         }
+//         console.log(url);
+//         this.getMovies(url);
+//       },
+//       deep: true,
+//       immediate: true,
+//     },
+//   },
+
+//   methods: {
+//     // fetching moviies
+//     async getMovies(url) {
+//       const { data } = await this.$http.get(url);
+//       this.movies = data;
+//     },
+//   },
+// };
+// </script>
+
+// <style></style>
