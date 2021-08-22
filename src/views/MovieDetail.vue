@@ -77,7 +77,12 @@
             </v-slide-group>
           </v-sheet>
           <v-divider class="my-6 mb-10"> </v-divider>
-          <v-dialog class="ma-0 pa-0" v-model="dialog" max-width="800px">
+          <v-dialog
+            class="ma-0 pa-0"
+            persistent
+            v-model="dialog"
+            max-width="800px"
+          >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 tile
