@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="mx-10 pa-16">
     <div class="pa-2 ml-2">
-      <h1>Similar</h1>
+      <h1>Featuring</h1>
       <h2>Movies</h2>
     </div>
     <v-row>

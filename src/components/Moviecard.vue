@@ -64,6 +64,9 @@ export default {
       return "https://image.tmdb.org/t/p/w500/" + this.movie.poster_path;
     },
   },
+  mounted() {
+    this.movie(this.$route.params.id);
+  },
   watch: {
     "route.param.id": {
       handler() {
@@ -71,6 +74,15 @@ export default {
       },
     },
   },
+  // updated() {
+  //   this.movie(this.$$route.params.id);
+  // },
+
+  // updated() {
+  //   this.$nextTick(function () {
+  //     this.watch;
+  //   });
+  // },
   // methods: {
   //   genretypeName(genraId, index) {
   //     for (const item of this.genres) {

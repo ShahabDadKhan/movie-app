@@ -93,7 +93,7 @@
             <v-card style="background-color: black">
               <v-card-title class="pa-0 ma-0">
                 <v-spacer></v-spacer>
-                <v-btn text color="error" @click="dialog = false">
+                <v-btn text color="error" @click="closeYouTubeModel">
                   <v-icon x-large class="white--text">mdi-close</v-icon>
                 </v-btn>
                 <!-- <span class="headline">{{ this.movie.title }}</span> -->
@@ -196,6 +196,11 @@ export default {
     openYouTubeModel() {
       this.mediaURL = this.youtubeVideo();
       this.isVideo = true;
+    },
+    closeYouTubeModel() {
+      // this.mediaURL = this.youtubeVideo();
+      this.dialog = false;
+      this.isVideo = false;
     },
     castProfileImage(cast) {
       if (cast.profile_path) {
