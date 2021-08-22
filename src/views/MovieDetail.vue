@@ -2,7 +2,7 @@
   <div class="detail">
     <v-container class="mt-16">
       <v-row class="mt-6">
-        <v-col cols="12" sm="4" class="mr-10">
+        <v-col cols="10" sm="4" class="mr-5">
           <v-card>
             <router-link :to="`/movie/${movie.id}`">
               <v-img
