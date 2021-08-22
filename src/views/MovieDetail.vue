@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="detail">
     <v-container class="mt-16">
-      <v-row>
+      <v-row class="mt-6">
         <v-col cols="12" sm="4" class="mr-10">
           <v-card>
             <router-link :to="`/movie/${movie.id}`">
@@ -210,6 +210,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.detail {
+  margin-top: 70px;
+}
 h1 {
   font-size: 35px;
   font-weight: 350;
