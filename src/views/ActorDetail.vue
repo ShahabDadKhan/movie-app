@@ -2,7 +2,7 @@
   <div>
     <v-container class="mt-16"
       ><V-row class="mt-16">
-        <v-col sm="4" class="mr-10" offset-md="1">
+        <v-col sm="4" class="mr-10 d-flex align-center" offset-md="1">
           <v-card height="600px">
             <v-img
               :src="profilePath"
