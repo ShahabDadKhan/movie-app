@@ -17,13 +17,6 @@
         <v-list rounded dense>
           <v-list-item-group active-class="main--text border">
             <v-list-item v-for="link in item.items" :key="link.id">
-              <!-- <router-link
-                :to="{
-                  path: `/${link.name}`,
-                  query: { id: link.id, ctg: item.title },
-                }"
-              >
-              </router-link> -->
               <v-list-item-icon>
                 <v-icon>{{ link.icon }}</v-icon>
               </v-list-item-icon>

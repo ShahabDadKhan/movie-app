@@ -35,44 +35,27 @@
               </v-row>
 
               <v-row class="body-2 black--text">
-                <!-- <div class=""> -->
                 <span v-for="(item, index) in movie.genres" :key="index">
                   {{ item.name }}
                   <span v-if="movie.genres.length - 1 != index">,</span>
                 </span>
-                <!-- </div> -->
               </v-row>
             </v-col>
           </v-row>
           <p class="mt-5 grey--text text-darken-3 subheader">
             {{ this.movie.overview }}
           </p>
-          <!-- <div class="mt-5">
-            <h2>Featured Cast</h2>
-          </div> -->
           <v-sheet class="mx-auto" max-width="900">
             <v-slide-group multiple show-arrows>
               <v-slide-item
                 v-for="(cast, index) in movie.credits.cast"
                 :key="index"
               >
-                <!-- <v-btn
-                  class="mx-2"
-                  :input-value="active"
-                  active-class="purple black--text"
-                  depressed
-                  rounded
-                  @click="toggle"
-                > -->
-                <!-- <v-avatar> -->
                 <router-link :to="`/person/${cast.id}`">
                   <v-avatar class="ma-2 pa-0">
                     <v-img :src="castProfileImage(cast)" alt="img" />
-                    <!-- <title class="subtitle-2">{{ cast.name }}</title> -->
                   </v-avatar>
                 </router-link>
-                <!-- </v-avatar> -->
-                <!-- </v-btn> -->
               </v-slide-item>
             </v-slide-group>
           </v-sheet>
@@ -101,7 +84,6 @@
                 <v-btn text color="error" @click="closeYouTubeModel">
                   <v-icon x-large class="white--text">mdi-close</v-icon>
                 </v-btn>
-                <!-- <span class="headline">{{ this.movie.title }}</span> -->
               </v-card-title>
               <v-card-text>
                 <v-container>
@@ -120,10 +102,6 @@
                   </v-row>
                 </v-container>
               </v-card-text>
-              <!-- <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn text color="error" @click="dialog = false">Close</v-btn>
-              </v-card-actions> -->
             </v-card>
           </v-dialog>
           <v-btn
@@ -164,33 +142,29 @@ export default {
     this.fetchMovie(this.$route.params.id);
   },
   watch: {
-    "route.params.id": {
-      handler() {
-        this.fetchMovie(this.$route.params.id);
-      },
-      immediate: true,
+    // "route.params.id": {
+    //   handler() {
+    //     this.fetchMovie(this.$route.params.id);
+    //   },
+    //   immediate: true,
+    // },
+    $route(to, from) {
+      if (to !== from) {
+        this.fetchMovie(to.params.id);
+      }
     },
   },
   computed: {
     posterPath() {
       return "https://image.tmdb.org/t/p/w500/" + this.movie.poster_path;
     },
-    // castProfileImage(cast) {
-    //   if (cast.profile_path) {
-    //     return "https://image.tmdb.org/t/p/w300" + cast.profile_path;
-    //   } else {
-    //     return "https://via.placeholder.com/300x450";
-    //   }
-    // },
   },
   methods: {
     async fetchMovie(movieId) {
       const response = await this.$http.get(
-        // `"/movie/${movieId}?append_to_response=credits,videos,images"`
         "/movie/" + movieId + "?append_to_response=credits,videos,images"
       );
       this.movie = response.data;
-      console.log("movie details", this.movie);
     },
     youtubeVideo() {
       if (!this.movie.videos) return;
@@ -203,7 +177,6 @@ export default {
       this.isVideo = true;
     },
     closeYouTubeModel() {
-      // this.mediaURL = this.youtubeVideo();
       this.dialog = false;
       this.isVideo = false;
     },
@@ -211,7 +184,6 @@ export default {
       if (cast.profile_path) {
         return "https://image.tmdb.org/t/p/w300" + cast.profile_path;
       } else {
-        // return "../Img/avatar.png";
         return "https://via.placeholder.com/300x450";
       }
     },
@@ -238,7 +210,6 @@ h2 {
   color: map-get($colors, main);
   font-size: 15px;
   font-weight: 600;
-  // margin: 40px 0px 16px 11px;
 }
 .iframe-container {
   overflow: hidden;
