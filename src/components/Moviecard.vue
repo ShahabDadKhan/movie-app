@@ -6,12 +6,15 @@
     >
       <v-img class="imgcard" :src="posterPath" height="400px"> </v-img>
     </router-link>
-    <h2>{{ movie.title }}</h2>
-    <v-card-text class="text-center">
+    <h2 class="mt-5">{{ movie.title }}</h2>
+    <v-card-text class="text-center pa-0">
       <v-rating
         :value="movie.vote_average / 2"
         dense
-        class="mb-2"
+        background-color="colrating lighten-1"
+        color="colrating"
+        class="mb-4 rating"
+        style="color: inherit"
         readonly
         size="15"
       ></v-rating>

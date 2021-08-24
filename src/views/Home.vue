@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid class="mt-15">
-    <div class="py-2 px-10 ml-6 mt-5">
+  <v-container fluid>
+    <div class="py-2 px-10 ml-6">
       <h1>Popular</h1>
       <h2>Movies</h2>
     </div>

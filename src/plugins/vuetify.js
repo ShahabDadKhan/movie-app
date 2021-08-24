@@ -15,6 +15,7 @@ export default new Vuetify({
     themes: {
       light: {
         primarydark: "#263238",
+        colrating: "#999",
         // used in bg color of search bar
         primary: colors.red.darken1, // #E53935
         secondary: colors.red.lighten4, // #FFCDD2

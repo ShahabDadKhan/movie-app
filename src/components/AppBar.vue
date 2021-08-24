@@ -68,7 +68,7 @@ export default {
   // min-width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin: 30px 0px 0px 50px;
+  margin: 30px 0px 0px 20px;
   padding-right: 60px;
 }
 

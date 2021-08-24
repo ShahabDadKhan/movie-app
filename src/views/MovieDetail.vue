@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <v-container class="mt-16">
+    <v-container class="">
       <v-row class="mt-6">
         <v-col cols="10" sm="4" class="mr-5">
           <v-card>
@@ -35,9 +35,12 @@
               </v-row>
 
               <v-row class="body-2 black--text">
-                <span v-for="(item, index) in movie.genres" :key="index">
-                  {{ item.name }}
-                  <span v-if="movie.genres.length - 1 != index">,</span>
+                <span
+                  v-for="(item, index) in movie.genres"
+                  :key="index"
+                  class="mr-1"
+                  >{{ item.name }}
+                  <span v-if="movie.genres.length - 1 != index">, </span>
                 </span>
               </v-row>
             </v-col>
@@ -68,8 +71,9 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
-                tile
-                color="red"
+                class="primarydark--text"
+                rounded
+                outlined
                 v-bind="attrs"
                 v-on="on"
                 @click.prevent="openYouTubeModel"
@@ -105,12 +109,12 @@
             </v-card>
           </v-dialog>
           <v-btn
-            tile
-            class="ml-2"
-            style="background-color: red"
+            class="ml-2 primarydark--text"
+            rounded
+            outlined
             @click="dialog = false"
           >
-            <v-icon left> mdi-heart </v-icon> Favoirit</v-btn
+            <v-icon left class="pa-2"> mdi-heart </v-icon> Favourite</v-btn
           >
         </v-col>
       </v-row>
@@ -192,9 +196,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.detail {
-  margin-top: 70px;
-}
 h1 {
   font-size: 35px;
   font-weight: 350;
