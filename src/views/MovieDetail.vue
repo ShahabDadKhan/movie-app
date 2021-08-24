@@ -20,6 +20,8 @@
               <v-row class="my-3">
                 <v-rating
                   :value="movie.vote_average / 2"
+                  background-color="colrating lighten-1"
+                  color="colrating"
                   dense
                   readonly
                   size="20"
